@@ -18,6 +18,9 @@ func router(app *config.AppConfig) http.Handler {
 
 	mux.Get("/", http.HandlerFunc(h.Repo.Index))
 	mux.Get("/sobre", http.HandlerFunc(h.Repo.About))
+	mux.Get("/quartos/quartel", http.HandlerFunc(h.Repo.RoomQuartel))
+	mux.Get("/quartos/suite", http.HandlerFunc(h.Repo.RoomSuite))
+	mux.Get("/contato", http.HandlerFunc(h.Repo.Contact))
 
 	// enable static files
 	fileServer := http.FileServer(http.Dir("./static/"))
