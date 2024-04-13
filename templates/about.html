@@ -1,0 +1,23 @@
+{{template "base" .}}
+
+{{define "title"}}
+    Sobre
+{{end}}
+
+{{define "content"}}
+    <div class="container">
+        <div class="row">
+            E-mail: {{index .StringMap "email"}}
+        </div>
+
+        <div class="row">
+            <p>
+                {{if ne (index .StringMap "remote_ip") ""}}
+                    Seu endereço ip remoto é {{index .StringMap "remote_ip"}}
+                {{else}}
+                    Não reconheço seu endereço ip 
+                {{end}}
+            </p>
+        </div>
+    </div>
+{{end}}
