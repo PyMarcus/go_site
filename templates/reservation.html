@@ -1,10 +1,9 @@
 {{template "base" .}}
 
     {{define "title"}}
-        Contato
+        Verificar disponibilidade
     {{end}}
 
-    
     {{define "css"}}
         <style>
             .my-footer{
@@ -40,17 +39,18 @@
                   </a>
                   <div class="dropdown-menu">
                     <a class="dropdown-item" href="/quartos/quartel">Quartel general</a>
-                    <a class="dropdown-item " href="/quartos/suite">Suíte master</a>
+                    <a class="dropdown-item" href="/quartos/suite">Suíte master</a>
                   </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/fazer-reserva">Fazer reserva</a>
+                    <a class="nav-link active" href="/fazer-reserva">Fazer reserva</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/disponivel">Disponibilidade</a>
                 </li>
+               
                 <li class="nav-item">
-                  <a class="nav-link active" href="/contato">Contato</a>
+                  <a class="nav-link" href="/contato">Contato</a>
                 </li>
               </ul>
             
@@ -58,23 +58,61 @@
         </nav>        
         <!--end of navigation bar-->
 
-        
+       
 
-        <div class="container" >
+        <div class="container main-content" >
             <div class="row">
                 <div class="col m-2">
-                    <h1 class="text-center mt-5">Contate-nos!</h1>
-                    <p> O melhor local para passar as suas férias é em uma ilha paradisíaca,
-                        com praias de areias brancas e águas cristalinas.
-                        Desfrute de dias ensolarados e noites estreladas enquanto relaxa em uma 
-                        rede sob as palmeiras. Aproveite para praticar esportes aquáticos 
-                        emocionantes ou simplesmente relaxar em um resort de luxo à beira-mar. 
-                        Com uma incrível vista panorâmica, cada momento será inesquecível!</p>
+                    <h1 class="mt-5">Fazer reserva!</h1>
+                    <form action="" method="post" class="needs-validation m-2" novalidate>
+                        
+                        <!--nome-->
+                        <div class="form-group mt-2 ">
+                            <label for="date-input">Primeiro nome</label>
+                            <input
+                               type="text" 
+                               class="form-control"
+                               id="first_name"
+                               aria-describedby="first_name"
+                               name="first_name"
+                              >
+                        
+                            <!--nome-->
+                        <div class="form-group mt-2 ">
+                            <label for="date-input">Último nome</label>
+                            <input
+                               type="text" 
+                               class="form-control"
+                               id="last_name"
+                               aria-describedby="last_name"
+                               name="last_name"
+                              >
+
+                        <!--email-->
+                        <div class="form-group mt-2 ">
+                          <label for="date-input">E-mail</label>
+                          <input
+                             type="email" 
+                             class="form-control"
+                             id="email"
+                             aria-describedby="email"
+                             name="email"
+                            >
+
+                                            
+                        <button type="submit" class="mt-2 btn btn-warning">Reservar</button>
+
+                      </form>
                 </div>
+
+
             </div>
 
             
         </div>
 
-        
+       
+       
     {{end}}
+
+  

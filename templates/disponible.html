@@ -1,10 +1,9 @@
 {{template "base" .}}
 
     {{define "title"}}
-        Contato
+        Verificar disponibilidade
     {{end}}
 
-    
     {{define "css"}}
         <style>
             .my-footer{
@@ -40,17 +39,17 @@
                   </a>
                   <div class="dropdown-menu">
                     <a class="dropdown-item" href="/quartos/quartel">Quartel general</a>
-                    <a class="dropdown-item " href="/quartos/suite">Suíte master</a>
+                    <a class="dropdown-item" href="/quartos/suite">Suíte master</a>
                   </div>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/fazer-reserva">Fazer reserva</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/disponivel">Disponibilidade</a>
-                </li>
+                  <a class="nav-link active" href="/disponivel">Disponibilidade</a>
+              </li>
                 <li class="nav-item">
-                  <a class="nav-link active" href="/contato">Contato</a>
+                  <a class="nav-link" href="/contato">Contato</a>
                 </li>
               </ul>
             
@@ -58,23 +57,49 @@
         </nav>        
         <!--end of navigation bar-->
 
-        
+       
 
-        <div class="container" >
+        <div class="container main-content" >
             <div class="row">
                 <div class="col m-2">
-                    <h1 class="text-center mt-5">Contate-nos!</h1>
-                    <p> O melhor local para passar as suas férias é em uma ilha paradisíaca,
-                        com praias de areias brancas e águas cristalinas.
-                        Desfrute de dias ensolarados e noites estreladas enquanto relaxa em uma 
-                        rede sob as palmeiras. Aproveite para praticar esportes aquáticos 
-                        emocionantes ou simplesmente relaxar em um resort de luxo à beira-mar. 
-                        Com uma incrível vista panorâmica, cada momento será inesquecível!</p>
+                    <h1 class="mt-5">Ver disponibilidade!</h1>
+                    <form action="/disponivel" method="get">
+
+                        <div class="form-group">
+                          <label for="date-input">Data inicial</label>
+                          <input
+                             type="date" 
+                             class="form-control"
+                             id="date-input"
+                             aria-describedby="date"
+                             name="date-input"
+                             data-date-format="dd/mm/yyyy"
+                            >
+
+                            <label for="date-input" class="mt-2">Data final</label>
+                          <input
+                             type="date" 
+                             class="form-control"
+                             id="date-end-input"
+                             aria-describedby="date"
+                             name="date-end-input"
+                             data-date-format="dd/mm/yyyy"
+                            >
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Conferir</button>
+
+                      </form>
                 </div>
+
+
             </div>
 
             
         </div>
 
-        
+       
+       
     {{end}}
+
+  
