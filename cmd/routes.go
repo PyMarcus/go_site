@@ -24,6 +24,8 @@ func router(app *config.AppConfig) http.Handler {
 	mux.Get("/disponivel", http.HandlerFunc(h.Repo.Disponible))
 	mux.Get("/fazer-reserva", http.HandlerFunc(h.Repo.DoReservation))
 
+	// not found
+	mux.NotFound(h.Repo.NotFound)
 
 	// enable static files
 	fileServer := http.FileServer(http.Dir("./static/"))

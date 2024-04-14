@@ -1,105 +1,114 @@
 {{template "base" .}}
 
-    {{define "title"}}
-        Verificar disponibilidade
-    {{end}}
+{{define "title"}}
+    Verificar disponibilidade
+{{end}}
 
-    {{define "css"}}
-        <style>
-            .my-footer{
-                height: 8em;
-                margin-top: 8em;
-                padding: 2em;
-                background-color: #2a2b2a;
-                color: #fff;
-                font-size: 80%;
-            }
-        </style>
-    {{end}}
+{{define "css"}}
+    <style>
+        .my-footer{
+            height: 8em;
+            margin-top: 8em;
+            padding: 2em;
+            background-color: #2a2b2a;
+            color: #fff;
+            font-size: 80%;
+        }
+    </style>
+{{end}}
 
-    {{define "content"}}
-        <!--navigation bar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Bookings</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
-                  <a class="nav-link" href="/">Início <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/sobre">Sobre</a>
-                </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="/salas" role="button" data-toggle="dropdown" aria-expanded="false">
-                    Salas
-                  </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="/quartos/quartel">Quartel general</a>
-                    <a class="dropdown-item" href="/quartos/suite">Suíte master</a>
-                  </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/fazer-reserva">Fazer reserva</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link active" href="/disponivel">Disponibilidade</a>
-              </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/contato">Contato</a>
-                </li>
-              </ul>
-            
-            </div>
-        </nav>        
-        <!--end of navigation bar-->
-
-       
-
-        <div class="container main-content" >
-            <div class="row">
-                <div class="col m-2">
-                    <h1 class="mt-5">Ver disponibilidade!</h1>
-                    <form action="/disponivel" method="get">
-
-                        <div class="form-group">
-                          <label for="date-input">Data inicial</label>
-                          <input
-                             type="date" 
-                             class="form-control"
-                             id="date-input"
-                             aria-describedby="date"
-                             name="date-input"
-                             data-date-format="dd/mm/yyyy"
-                            >
-
-                            <label for="date-input" class="mt-2">Data final</label>
-                          <input
-                             type="date" 
-                             class="form-control"
-                             id="date-end-input"
-                             aria-describedby="date"
-                             name="date-end-input"
-                             data-date-format="dd/mm/yyyy"
-                            >
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary">Conferir</button>
-
-                      </form>
-                </div>
+{{define "content"}}
+    <!--navigation bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Bookings</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="/">Início <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/sobre">Sobre</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="/salas" role="button" data-toggle="dropdown" aria-expanded="false">
+                Salas
+              </a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="/quartos/quartel">Quartel general</a>
+                <a class="dropdown-item" href="/quartos/suite">Suíte master</a>
+              </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/fazer-reserva">Fazer reserva</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/disponivel">Disponibilidade</a>
+          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contato">Contato</a>
+            </li>
+          </ul>
+        
+        </div>
+    </nav>        
+    <!--end of navigation bar-->
 
 
+    <div class="container main-content" >
+        <div class="row">
+            <div class="col m-2">
+                <h1 class="mt-5">Ver disponibilidade!</h1>
+                <form action="/disponivel" method="get">
+
+                    <div class="form-group" >
+                    
+                    <div class="form-row mb-2" id="control">
+                      <label for="date-input" >Data inicial</label>
+                      <input class="form-control" type="text" name="start" placeholder="Data inicial" required>
+                      <label for="date-input" class="mt-2">Data final</label>
+                      <input class="form-control" type="text" name="end" placeholder="Data final" required>  
+                    </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Conferir</button>
+
+                  </form>
             </div>
 
-            
+
         </div>
 
-       
-       
-    {{end}}
+        
+    </div>
+
+
+{{end}}
 
   
+    <script>
+        const elem = document.getElementById('control');
+        const rangepicker = new DateRangePicker(elem, {
+          format: 'dd/mm/yyyy' // Define o formato da data para dd/mm/yyyy
+        }); 
+
+
+        function alertDisponibility(isDisponible){
+          if(isDisponible){
+            notie.alert({
+            type: 1, // optional, default = 4, enum: [1, 2, 3, 4, 5, 'success', 'warning', 'error', 'info', 'neutral']
+            text: "Disponível",
+            })
+          }else{
+            notie.alert({
+            type: 3, // optional, default = 4, enum: [1, 2, 3, 4, 5, 'success', 'warning', 'error', 'info', 'neutral']
+            text: "Indisponível",
+            })
+          }
+        }
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.3.4/dist/js/datepicker-full.min.js"></script>

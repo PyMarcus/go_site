@@ -1,7 +1,7 @@
 {{template "base" .}}
 
     {{define "title"}}
-        Verificar disponibilidade
+        Página Principal
     {{end}}
 
     {{define "css"}}
@@ -27,7 +27,7 @@
           
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
+                <li class="nav-item active">
                   <a class="nav-link" href="/">Início <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
@@ -43,12 +43,11 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="/fazer-reserva">Fazer reserva</a>
+                    <a class="nav-link" href="/fazer-reserva">Fazer reserva</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/disponivel">Disponibilidade</a>
                 </li>
-               
                 <li class="nav-item">
                   <a class="nav-link" href="/contato">Contato</a>
                 </li>
@@ -58,51 +57,8 @@
         </nav>        
         <!--end of navigation bar-->
 
-       
-
-        <div class="container main-content" >
-            <div class="row">
-                <div class="col m-2">
-                    <h1 class="mt-5">Fazer reserva!</h1>
-
-                    <form class="needs-validation" novalidate action="#" method="get">
-                      <div class="form-row">
-                        <div class="col-md-12 mb-3">
-                          <label for="validationTooltip01">Primeiro nome</label>
-                          <input type="text" class="form-control" id="validationTooltip01" name="first_name" required>
-                          <div class="valid-tooltip">
-                            Parece ok!
-                          </div>
-                        </div>
-                        <div class="col-md-12 mb-3">
-                          <label for="validationTooltip02">Último nome</label>
-                          <input type="text" class="form-control" id="validationTooltip02" name="last_name" required>
-                          <div class="valid-tooltip">
-                            Parece ok!
-                          </div>
-                        </div>
-
-                        <div class="col-md-12 mb-3">
-                          <label for="validationTooltip03">E-mail</label>
-                          <input type="text" class="form-control" id="validationTooltip03" name="email" required>
-                          <div class="valid-tooltip">
-                            Parece ok!
-                          </div>
-                        </div>
-                      </div>
-                      
-                      <button class="btn btn-primary" type="submit">Reservar!</button>
-                    </form>
-                </div>
-
-
-            </div>
-
-            
-        </div>
-
-       
-       
-    {{end}}
+        <img src="/static/img/notfound.jpg" class="d-block w-100 img-fluid"  alt="nao encontrada">
 
   
+    {{end}}
+
